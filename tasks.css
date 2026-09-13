@@ -40,7 +40,7 @@
     font-family:"Roboto","sans-serif";
     font-size:25px;
     margin-top:50px;
-    margin-left:100px;
+    margin-left:80px;
 }
 
 .task-container {
@@ -99,6 +99,10 @@
 }
 
 .delete-icon{
+    padding:15px;
+}
+
+.edit-icon{
     padding:15px;
 }
 

@@ -67,6 +67,13 @@ function createandAppendTodo(todoObject){
         labelElement.setAttribute("for", checkbox.id);
         todoItem.appendChild(labelElement);
         todoItem.classList.add("task-item");
+
+        let editButton = document.createElement("button");
+        let editIcon = document.createElement("i");
+        editIcon.classList.add("far","fa-edit","edit-icon");
+        editButton.classList.add("edit-icon","button");
+        editButton.appendChild(editIcon);
+        todoItem.appendChild(editButton);
         
         let deleteButton = document.createElement("button");
         let deleteIcon = document.createElement("i");
@@ -81,6 +88,18 @@ function createandAppendTodo(todoObject){
 
         deleteButton.addEventListener("click",function(){
             deleteTask(todoItem);
+        });
+
+        editButton.addEventListener("click",function(){
+            let newTask = prompt("Edit the task:", todoObject.task);
+            if(newTask !== null && newTask.trim() !== ""){
+                todoObject.task = newTask.trim();
+                todoObject.task = newTask;
+                editTask(labelElement.id,todoObject);
+            }
+            else {
+                alert("Task cannot be empty. Please enter a valid task.");
+            }
         });
 
         taskList.appendChild(todoItem);
@@ -122,6 +141,11 @@ function strikeThroughTask(checkboxId,labelId,todoObject){
 function deleteTask(todoItem){
     tasksList = tasksList.filter(task => task.id !== todoItem.id);
     taskList.removeChild(todoItem);
+}
+
+function editTask(labelId,todoObject){
+    let labelElement = document.getElementById(labelId);
+    labelElement.textContent = todoObject.task;
 }
 
 
