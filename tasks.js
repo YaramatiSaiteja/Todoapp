@@ -33,8 +33,23 @@ headingsContainer.classList.add("d-flex","flex-row");
 let totalTasksHeadingContainer = document.createElement("div");
 totalTasksHeadingContainer.classList.add("total-tasks-heading-container");
 
+let filterContainer = document.createElement("div");
+filterContainer.classList.add("filter-container","d-flex","flex-row");
+let total = document.createElement("button");
+total.textContent = "Total: " + tasksList.length;
+total.classList.add("btn","btn-secondary","filter-button");
+filterContainer.appendChild(total);
 
+let completed = document.createElement("button");
+completed.textContent = "Completed: " + tasksList.filter(task => task.completed).length;
+completed.classList.add("btn","btn-success","filter-button");
+filterContainer.appendChild(completed);
 
+let active = document.createElement("button");
+active.textContent = "Active: " + tasksList.filter(task => !task.completed).length;
+active.classList.add("btn","btn-warning","filter-button");
+filterContainer.appendChild(active);
+cardElement.appendChild(filterContainer);
 
 let totalTasks = document.createElement("h3");
 totalTasks.textContent = "My Tasks: ";

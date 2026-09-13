@@ -117,3 +117,11 @@
 .checked {
     text-decoration: line-through;
 }
+
+.filter-container {
+    margin-top: 20px;
+}
+
+.filter-button {
+    margin-right:30px;
+}
