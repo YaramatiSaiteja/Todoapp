@@ -33,6 +33,9 @@ headingsContainer.classList.add("d-flex","flex-row");
 let totalTasksHeadingContainer = document.createElement("div");
 totalTasksHeadingContainer.classList.add("total-tasks-heading-container");
 
+
+
+
 let totalTasks = document.createElement("h3");
 totalTasks.textContent = "My Tasks: ";
 totalTasks.classList.add("total-tasks");
@@ -97,7 +100,7 @@ function createandAppendTodo(todoObject){
                 todoObject.task = newTask;
                 editTask(labelElement.id,todoObject);
             }
-            else {
+            else if(newTask === "") {
                 alert("Task cannot be empty. Please enter a valid task.");
             }
         });
