@@ -18,7 +18,7 @@ cardElement.appendChild(inputContainer);
 
 let taskInput = document.createElement("input");
 taskInput.type = "text";
-taskInput.placeholder = "Enter what needs to be done";
+taskInput.placeholder = "Enter a task";
 taskInput.classList.add("task-input");
 inputContainer.appendChild(taskInput);
 
